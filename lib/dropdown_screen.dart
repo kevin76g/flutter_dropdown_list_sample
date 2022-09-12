@@ -27,7 +27,7 @@ class _DropDownScreenState extends State<DropDownScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Firestore DropDown Sample'),
+        title: const Text('Flutter Firestore Dropdown Sample'),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 50.0),
@@ -51,7 +51,10 @@ class _DropDownScreenState extends State<DropDownScreen> {
               children: [
                 Row(
                   children: [
-                    const Text('フルーツの選択'),
+                    const Text(
+                      'フルーツ',
+                      style: TextStyle(fontSize: 26.0),
+                    ),
                     const SizedBox(
                       width: 50.0,
                     ),
@@ -73,7 +76,10 @@ class _DropDownScreenState extends State<DropDownScreen> {
                           (Map<String, dynamic> map) {
                         return DropdownMenuItem<String>(
                           value: map['value'],
-                          child: Text(map['display']),
+                          child: Text(
+                            map['display'],
+                            style: const TextStyle(fontSize: 26.0),
+                          ),
                         );
                       }).toList(),
                     ),
@@ -83,7 +89,10 @@ class _DropDownScreenState extends State<DropDownScreen> {
                   height: 50.0,
                 ),
                 fruit != null
-                    ? Text('Firestore document ID：　$fruit')
+                    ? Text(
+                        'ドキュメントID：$fruit',
+                        style: const TextStyle(fontSize: 26.0),
+                      )
                     : Container(),
               ],
             );
